@@ -12,11 +12,11 @@ const params = new URLSearchParams(queryString);
 
 const id = params.get("id");
 
-console.log(id);
+
 
 const newUrl = "https://api.noroff.dev/api/v1/rainy-days" +"/" + id
 
-console.log(newUrl);
+
 
 async function apiCallnew(){
     
@@ -80,17 +80,4 @@ async function createProductSpecific(details){
 }
 
 createProductSpecific();
-
-// const queryString = document.location.search;
-
-// const params = new URLSearchParams(queryString);
-
-// const id = params.get("id");
-
-// console.log(id);
-
-// const newUrl = "https://api.noroff.dev/api/v1/rainy-days" +"/" + id
-
-// console.log(newUrl);
-
 
