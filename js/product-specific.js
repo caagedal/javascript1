@@ -1,9 +1,6 @@
 
 import { errorMessage } from "./components.js";
 
-// import { products } from "./components.js";
-
-
 const productSpecific = document.querySelector(".product-specifics")
 
 const queryString = document.location.search;

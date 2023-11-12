@@ -1,4 +1,5 @@
 import { products } from "./components.js";
+import { errorMessage } from "./components.js";
 
 const favoriteJackets = document.querySelector(".favorite-container");
 const SalesJackets = document.querySelector(".sales1-container");
