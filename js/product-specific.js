@@ -24,7 +24,7 @@ async function apiCallnew(){
         const response = await fetch(newUrl);
         const details= await response.json();
     
-        console.log(details);
+       
     
         createProductSpecific(details);
     }
