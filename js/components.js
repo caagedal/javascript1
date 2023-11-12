@@ -6,7 +6,7 @@ import { apiCall } from "./api.js";
 export let products = await apiCall();
 
 
-console.log(products);
+
 
 
 
