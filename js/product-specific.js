@@ -40,7 +40,7 @@ async function createProductSpecific(details){
         
         productSpecific.innerHTML = ""
 
-        
+        if (details.onSale === true){
 
             productSpecific.innerHTML += 
                 `
@@ -53,7 +53,7 @@ async function createProductSpecific(details){
                         <div class = "product-description">
                             <h1>${details.title}</h1>
                             <p>${details.description}</p>
-                            <p>£${details.price}</p>
+                            <p class = "discounted"><span class = "discount"> £${details.price}</span>£${details.discountedPrice}</p>
                             <p>Colour: ${details.baseColor}</p>
                             <p>${details.sizes}</p>
                             <div class = "cart-ps">
@@ -65,7 +65,32 @@ async function createProductSpecific(details){
                         </div>
                     </div>
                 `
-
+        }
+        else {
+            productSpecific.innerHTML += 
+            `
+                <div class="product-specific">
+                    <div class="product-display">
+                        <div class = "large">
+                            <img src="${details.image}" alt="Image of ${details.title}">
+                        </div>
+                    </div>
+                    <div class = "product-description">
+                        <h1>${details.title}</h1>
+                        <p>${details.description}</p>
+                        <p>£${details.price}</p>
+                        <p>Colour: ${details.baseColor}</p>
+                        <p>${details.sizes}</p>
+                        <div class = "cart-ps">
+                            <a href = "/checkout.html">Add to cart</a>
+                        </div>
+                        <div class = "return-w">
+                            <a href = "/index.html">Return to home</a>
+                        </div>
+                    </div>
+                </div>
+            `
+        }    
         
 
     }
