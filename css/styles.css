@@ -923,7 +923,7 @@ Product specific page
     background-color: var(--theme-color);
 }
 
-.large{
+.large img{
     max-width: 100%;
     background-color: var(--bg-products);}
 
@@ -950,8 +950,8 @@ Product specific page
 .cart-ps a{
     display: inline-block;
     text-align: center;
-    color: var(--theme-color);
-    background-color: var(--text-color);
+    color: var(--dark-theme);
+    background-color: rgb(238, 177, 63);
     padding: 15px 0;
     width: 300px;
     font-weight: 700;
