@@ -40,7 +40,7 @@
     <a href="about.html">About</a>
   </nav>
   <div class="shopping-cart">
-    <a href="checkout.html"><img src="images/other/SHOPING-BAG.png" alt="Shopping bag"></a>
+    <a href="checkout.html"><i class="fas fa-shopping-bag" style="color: #ffffff;"></i></a>
   </div>
 </header> 
 <!--Main-->
@@ -51,30 +51,39 @@
     <section class="contact">
       <!--Form-->
       <div class="contact-fill">
-          <label for="contact-email">E-mail*</label>
+
+          <label for="contact-email">E-mail</label>
           <input type="email" name="contact-email" id="contact-email" placeholder="E-mail address" required>
-          <label for="contact-name">Name on card*</label>
+          <span id="email-error">Mail is required</span>
+
+          <label for="contact-name">Name</label>
           <input type="text" name="contact-name" id="contact-name" placeholder="Full name" required>
+          <span id="name-error">Name is required</span>
+
           <div class="message">
             <label for="message">Message</label>
             <input type="text" name="message" id="message" placeholder="Write message here" required>
+            <span id="message-error">Message field is empty</span>
           </div>
-        <button class="contact-button">Submit</button>
+
+          <button class="contact-button">Submit</button>
+          <span id="submit-error">Can't send</span>
+        
       </div>  
       <!--Info-->  
       <div class="sideinfo">
         <div class="grid-contact">
-          <i class="fa-regular fa-clock"></i>
+          <i class="far fa-clock" style="color: #ffffff;"></i>
           <h2>Opening hours:</h2>
           <p>Mon - Fri 09.00-17.00</p>
         </div>
         <div class="grid-contact">
-          <i class="fa-solid fa-phone"></i>
+          <i class="fas fa-phone" style="color: #ffffff;"></i>
           <h2>Phone:</h2>
           <p>+47 381 17 766</p>
         </div>
         <div class="grid-contact">
-          <i class="fa-regular fa-envelope"></i>
+          <i class="far fa-envelope" style="color: #ffffff;"></i>
           <h2>E-mail:</h2>
           <p>support@rainydays.no</p>
         </div>

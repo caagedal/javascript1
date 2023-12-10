@@ -37,6 +37,7 @@ apiCallnew();
 async function createProductSpecific(details){
 
     try{
+
         
         productSpecific.innerHTML = ""
 
@@ -46,18 +47,18 @@ async function createProductSpecific(details){
                 `
                     <div class="product-specific">
                         <div class="product-display">
-                            <div class = "large">
-                                <img src="${details.image}" alt="Image of ${details.title}">
-                            </div>
+                            <img src="${details.image}" alt="Image of ${details.title}">
                         </div>
                         <div class = "product-description">
                             <h1>${details.title}</h1>
-                            <p>${details.description}</p>
                             <p class = "discounted"><span class = "discount"> £${details.price}</span>£${details.discountedPrice}</p>
                             <p>Colour: ${details.baseColor}</p>
                             <p>${details.sizes}</p>
                             <div class = "cart-ps">
                                 <a href = "/checkout.html">Add to cart</a>
+                            </div>
+                            <div class = "jacket-properties">
+                                <p>${details.description}</p>
                             </div>
                             <div class = "return-w">
                                 <a href = "/index.html">Return to home</a>
@@ -71,19 +72,18 @@ async function createProductSpecific(details){
             `
                 <div class="product-specific">
                     <div class="product-display">
-                        <div class = "large">
                             <img src="${details.image}" alt="Image of ${details.title}">
-                        </div>
                     </div>
                     <div class = "product-description">
                         <h1>${details.title}</h1>
-                        <p>${details.description}</p>
                         <p>£${details.price}</p>
                         <p>Colour: ${details.baseColor}</p>
                         <p>${details.sizes}</p>
                         <div class = "cart-ps">
-                            <a href = "/checkout.html">Add to cart</a>
+                        <a href = "/checkout.html">Add to cart</a>
                         </div>
+                        <h3>Desctiption</h3>
+                        <p>${details.description}</p>
                         <div class = "return-w">
                             <a href = "/index.html">Return to home</a>
                         </div>
