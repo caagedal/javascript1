@@ -121,7 +121,7 @@ async function createSalesSection(){
                                 <img src= "${products[i].images[0].src}" alt = "Image of the ${products[i].name}">
                                 <div class = "product-text">
                                     <h3>${products[i].name}</h3>
-                                    <p><span class = "discount-small">${sale}</span>${price}</p>
+                                    <p><span class = "discount-small">${discount}</span>${price}</p>
                                 </div>
                                 <div class = "view-more">
                                     <a href="product-specific/product-specific.html?id=${products[i].id}">View more</a>
