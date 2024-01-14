@@ -15,23 +15,22 @@ async function createfavoriteSection(){
 
         for (let i = 0; i < products.length; i++){
                     
-            const lastSize = products[i].sizes[products[i].sizes.length - 1];
-            const price = products[i].price;
-            const discount = products[i].discountedPrice;
-
+            const price = products[i].prices.regular_price/100;
+            const discount = products[i].prices.sale_price/100;
+            const sale = products[i].on_sale;
             // console.log(lastSize)
 
-            if (products[i].favorite === true){
+            if (products[i].attributes[2].terms[0].name === "true"){
 
-                if (price === discount){
+                if (sale === false){
                     favoriteJackets.innerHTML +=     
                             `
                             <div class="product-card">
                                 <a href="product-specific/product-specific.html?id=${products[i].id}">
-                                    <img src= "${products[i].image}" alt = "Image of the ${products[i].title}">
+                                    <img src= "${products[i].images[0].src}" alt = "Image of the ${products[i].name}">
                                     <div class = "product-text">
-                                        <h3>${products[i].gender}'s ${products[i].title}</h3>
-                                        <p>${products[i].price}</p>
+                                        <h3>${products[i].name}</h3>
+                                        <p>${price}</p>
                                     </div>
                                     <div class = "view-more">
                                         <a href="product-specific/product-specific.html?id=${products[i].id}">View more</a>
@@ -48,10 +47,10 @@ async function createfavoriteSection(){
                             <div class="product-card">
                             <span class="wdp-ribbon wdp-ribbon-two">Sale</span>
                             <a href="product-specific/product-specific.html?id=${products[i].id}">
-                                <img src= "${products[i].image}" alt = "Image of the ${products[i].title}">
+                                <img src= "${products[i].images[0].src}" alt = "Image of the ${products[i].name}">
                                 <div class = "product-text">
-                                    <h3>${products[i].gender}'s ${products[i].title}</h3>
-                                    <p><span class = "discount-small">${products[i].discountedPrice}</span>${products[i].price}</p>
+                                    <h3>${products[i].name}</h3>
+                                    <p><span class = "discount-small">${discount}</span>${price}</p>
                                 </div>
                                 <div class = "view-more">
                                     <a href="product-specific/product-specific.html?id=${products[i].id}">View more</a>
@@ -66,7 +65,7 @@ async function createfavoriteSection(){
     }
     catch(error) {
         console.log("Oh no, something went wrong", error);
-        favoriteJackets.innerHTML += `<p class = "error">Woops, something went wrong!</p>` 
+        favoriteJackets.innerHTML += errorMessage; 
     }
     finally{
     }
@@ -86,23 +85,23 @@ async function createSalesSection(){
 
         for (let i = 0; i < products.length; i++){
                     
-            const lastSize = products[i].sizes[products[i].sizes.length - 1];
-            const price = products[i].price;
-            const discount = products[i].discountedPrice;
+            const price = products[i].prices.regular_price/100;
+            const discount = products[i].prices.sale_price/100;
+            const sale = products[i].on_sale;
 
             // console.log(lastSize)
 
-            if (products[i].onSale === true){
+            if (sale === true){
 
                 if (price === discount){
                     SalesJackets.innerHTML +=     
                             `
                             <div class="product-card">
                             <a href="product-specific/product-specific.html?id=${products[i].id}">
-                                <img src= "${products[i].image}" alt = "Image of the ${products[i].title}">
+                                <img src= "${products[i].images[0].src}" alt = "Image of the ${products[i].name}">
                                 <div class = "product-text">
-                                    <h3>${products[i].gender}'s ${products[i].title}</h3>
-                                    <p>${products[i].price}</p>
+                                    <h3>${products[i].name}</h3>
+                                    <p>${price}</p>
                                 </div>
                                 <div class = "view-more">
                                     <a href="product-specific/product-specific.html?id=${products[i].id}">View more</a>
@@ -119,10 +118,10 @@ async function createSalesSection(){
                             <div class="product-card">
                             <span class="wdp-ribbon wdp-ribbon-two">Sale</span>
                             <a href="product-specific/product-specific.html?id=${products[i].id}">
-                                <img src= "${products[i].image}" alt = "Image of the ${products[i].title}">
+                                <img src= "${products[i].images[0].src}" alt = "Image of the ${products[i].name}">
                                 <div class = "product-text">
-                                    <h3>${products[i].gender}'s ${products[i].title}</h3>
-                                    <p><span class = "discount-small">${products[i].discountedPrice}</span>${products[i].price}</p>
+                                    <h3>${products[i].name}</h3>
+                                    <p><span class = "discount-small">${sale}</span>${price}</p>
                                 </div>
                                 <div class = "view-more">
                                     <a href="product-specific/product-specific.html?id=${products[i].id}">View more</a>
